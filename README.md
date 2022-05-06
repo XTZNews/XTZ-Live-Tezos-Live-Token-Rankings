@@ -2,14 +2,14 @@
 
 ## Dependencies
 
-[apexcharts](https://apexcharts.com/)
-[axios](https://axios-http.com/)
-[chartlist](https://github.com/Yopadd/vue-chartist#readme)
-[gridjs](https://gridjs.io/)
-[gsap](https://greensock.com/)
-[locomotive-scroll](https://locomotivemtl.github.io/locomotive-scroll/)
-[nuxt](https://nuxtjs.org/)
-[swiper](https://swiperjs.com/)
+- [apexcharts](https://apexcharts.com/)
+- [axios](https://axios-http.com/)
+- [chartlist](https://github.com/Yopadd/vue-chartist#readme)
+- [gridjs](https://gridjs.io/)
+- [gsap](https://greensock.com/)
+- [locomotive-scroll](https://locomotivemtl.github.io/locomotive-scroll/)
+- [nuxt](https://nuxtjs.org/)
+- [swiper](https://swiperjs.com/)
 
 ## Insallation
 
