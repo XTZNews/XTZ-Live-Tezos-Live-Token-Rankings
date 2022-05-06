@@ -1,0 +1,281 @@
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('~assets/fonts/CeraPro-Regular.eot');
+  src: local('Cera Pro Regular'), local('CeraPro-Regular'),
+    url('~assets/fonts/CeraPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/CeraPro-Regular.woff') format('woff'),
+    url('~assets/fonts/CeraPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('~assets/fonts/CeraPro-Medium.eot');
+  src: local('Cera Pro Medium'), local('CeraPro-Medium'),
+    url('~assets/fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/CeraPro-Medium.woff') format('woff'),
+    url('~assets/fonts/CeraPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url('~assets/fonts/CeraPro-Bold.eot');
+  src: local('Cera Pro Bold'), local('CeraPro-Bold'),
+    url('~assets/fonts/CeraPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/CeraPro-Bold.woff') format('woff'),
+    url('~assets/fonts/CeraPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: circe, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 50%;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  box-sizing: border-box;
+
+  @screen sm {
+    font-size: 56.25%;
+  }
+
+  @screen lg {
+    font-size: 58.875%;
+  }
+
+  @screen 2xl {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  font-family: Cera Pro, sans-serif;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: Cera Pro, sans-serif;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2.1rem;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-family: Cera Pro, sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.bar {
+  &:before {
+    content: '';
+    margin-right: 1.4rem;
+    @apply bg-blue;
+    width: 0.5rem;
+    height: 0.8em;
+    display: inline-flex;
+    transform: translateY(10%);
+    transition: 0.3s all;
+  }
+}
+
+a,
+button {
+  @apply md:transition-all md:duration-300;
+
+  svg {
+    @apply md:transition-all md:duration-300;
+  }
+}
+
+.btn-block {
+  @apply text-blue dark:text-white inline-flex items-center;
+
+  span {
+    position: relative;
+    padding-right: 2.2rem;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -0.3rem;
+      left: -0.8rem;
+      width: calc(100% + 0.8rem);
+      height: 1px;
+      @apply bg-blue dark:bg-white;
+      transition: 0.4s all;
+    }
+
+    &:before {
+      z-index: 0;
+    }
+
+    &:after {
+      z-index: 1;
+      width: 0;
+      @apply bg-blue-dark;
+    }
+  }
+
+  .box {
+    width: 6.7rem;
+    height: 6.2rem;
+    @apply bg-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all;
+
+    svg {
+      stroke: #fff;
+      fill: none;
+      width: 1.4rem;
+
+      path:first-child {
+        stroke-dasharray: 49 51;
+        stroke-dashoffset: -50;
+        transition: 0.4s all;
+      }
+    }
+  }
+
+  &:hover {
+    @apply text-blue-dark dark:text-white;
+
+    span {
+      &:after {
+        width: calc(100% + 0.8rem);
+      }
+    }
+
+    .box {
+      @apply bg-blue-dark dark:bg-blue;
+      svg {
+        path:first-child {
+          stroke-dashoffset: 0;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}
+
+.gridjs-container {
+  @apply dark:text-white;
+}
+
+.gridjs .gridjs-wrapper:nth-last-of-type(2) {
+  border-radius: 0;
+  border: none;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 4%), 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+
+button.gridjs-sort {
+  @apply invert;
+
+  &.gridjs-sort-neutral {
+    opacity: 0.5;
+  }
+}
+
+[data-column-id='token'] {
+  text-align: left;
+}
+
+td.gridjs-td:last-child {
+  height: 5.2rem;
+}
+
+tr:nth-child(even) {
+  @apply bg-gray-light dark:bg-black;
+}
+
+tr:nth-child(odd) {
+  @apply dark:bg-blue-dark;
+}
+
+.ct-series-a {
+  .ct-bar,
+  .ct-line,
+  .ct-point,
+  .ct-slice-donut {
+    stroke: #de6e8b;
+    stroke-width: 1px;
+    fill: none;
+  }
+
+  .ct-point {
+    stroke-linecap: round;
+    stroke-width: 5px;
+  }
+}
+
+td svg {
+  overflow: visible;
+}
+
+.apexcharts-xaxistooltip,
+.apexcharts-yaxistooltip {
+  padding: 0.4rem 1rem !important;
+  color: #fff !important;
+  border: none !important;
+  @apply bg-blue #{!important};
+
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.apexcharts-xaxistooltip-text,
+.apexcharts-yaxistooltip-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.apexcharts-title-text,
+.apexcharts-text {
+  @apply text-white capitalize dark:fill-current;
+}
+
+.gridjs-summary {
+  display: none;
+}
